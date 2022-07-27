@@ -1,0 +1,40 @@
+{% extends 'homebase.html' %}
+
+
+{% block head %}
+<title>
+    home
+</title>
+{% endblock %}
+
+{% block body %}
+{% csrf_token %}
+    <nav class="navbar navbar-expand-custom navbar-mainbg">
+        <h3> Welcome {{first_name}} {{last_name}}</h3>
+        <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars text-white"></i>
+        </button>
+        <a class="navbar-brand navbar-logo" href="/logout">Logout</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#"><i class="fas fa-tachometer-alt"></i>Product Category</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#"><i class="far fa-address-book"></i>Orders</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#"><i class="far fa-clone"></i>Wallet</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#"><i class="far fa-copy"></i>Settings</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="row">
+        <div class="col-sm-6">
+        </div>
+    </div>
+{% endblock %}

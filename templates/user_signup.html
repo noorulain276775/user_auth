@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<title>
+    Signup form
+</title>
+{% endblock %}
+
+{% block body %}
+<main>
+    {% include 'messages.html' %}
+    {% block content %}
+    {% endblock %}
+</main>
+<div class="position">
+    <div class="container">
+        <div class="text-center"></div>
+        <form class="form-style-5" method="post" style="margin-top:20px">
+            <h1 class="text-center" id="siguptext"><b>Sign up</b></h1>
+            {% csrf_token %}
+            <table>
+                <div class="form-row" style="margin-bottom: 10px">
+                    <div class="col-sm-12">
+                        <label for="{{user_form.first_name_tag}}">First Name</label>
+                        <input type="text" name="first_name" maxlength="50" id="id_first_name" pattern="[A-Za-z]{1,20}"
+                            required>
+
+                        <label for="{{user_form.last_name_tag}}">Last Name</label>
+                        <input type="text" name="last_name" maxlength="50" id="id_last_name" pattern="[A-Za-z]{1,20}"
+                            required>
+
+                        <label for="{{user_form.phone_tag}}">Phone</label>
+                        <input type="text" name="phone" maxlength="12" placeholder="e.g. 923xxxxxxxxx" id="id_phone"
+                            pattern="^923[0-9]{9}$" title="Please use the valid format (923xxxxxxxxx)."
+                            required>
+
+                        <label for="{{user_form.password_tag}}">Password</label>
+                        <input type="password" name="password" placeholder="e.g. use strong password"
+                            maxlength="255" id="id_password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+
+                        <label for="{{user_form.confirm_password_tag}}">Confirm password</label>
+                        <input type="password" name="confirm_password" maxlength="255" id="id_confirm_password" required>
+                    </div>
+                </div>
+                <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit"
+                    id="signupbtn"><b>Sign up</b></button>
+                <hr>
+                <h3 class="text-center" id="alhere">Already have account?</h3>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <a href="/login" class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
+                            id="signinbtn">Sign-in here
+                        </a>
+                    </div>
+                </div>
+            </table>
+        </form>
+    </div>
+</div>
+<script src="{% static 'admin/js/user_signup.js' %}"></script>
+{% endblock %}

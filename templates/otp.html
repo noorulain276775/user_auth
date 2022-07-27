@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<title>
+  Signup form
+</title>
+{% endblock %}
+
+
+{% block body %}
+<main>
+  {% include 'messages.html' %}
+  {% block content %}
+  {% endblock %}
+</main>
+<div class="position">
+  <div class="container">
+    <div class="text-center"></div>
+    <form class="form-style-5" method="post" style="margin-top: 20px">
+      <h3 style="font-family: 'Literata', serif" class="text-center"><b>OTP verification</b></h3>
+      {% csrf_token %}
+      <table>
+        <div class="row" style="margin-top: 40px">
+          <div class="col-sm-10">
+            <label for="{{otp_form.otp_tag}}">Enter your OTP</label>
+            <input type="password" name="otp" maxlength="6" id="id_otp" pattern="[0-9]{6,6}"
+              required>
+          </div>
+        </div>
+        <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit"
+          style="background-color: rgb(3, 41, 66); color: white; margin-top: 20px; font-size: 18px">Verify
+        </button>
+        <p style="font-size: 15px">Didn't receive otp? <a href="/otp"
+            style="text-decoration:none; margin: top 20px; font-size: 15px">Click </a> to resend again. 
+        </p>
+      </table>
+    </form>
+  </div>
+</div>
+<script src="{% static 'admin/js/user_otp.js' %}"></script>
+{% endblock %}

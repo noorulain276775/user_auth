@@ -1,0 +1,19 @@
+{% for message in messages %}
+<div class="container-fluid p-0">
+  <div class="alert {{ message.tags }} alert-dismissible" role="alert" id="message_box">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true" onclick="buttonclose()">&times;</span>
+    </button>
+    {{ message }}
+  </div>
+</div>
+{% endfor %}
+
+
+<script>
+var message_tag = document.getElementById("message_box");
+function buttonclose(){ 
+   message_tag.style.display = "none"; 
+};  
+
+</script>

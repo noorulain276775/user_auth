@@ -1,0 +1,75 @@
+body {
+    background-color: rgb(3, 41, 66)
+}
+
+.form-style-5 {
+    max-width: 350px;
+    padding: 10px 20px;
+    margin-top: 3em;
+    margin: 10px auto;
+    margin-bottom: 1em;
+    padding: 30px;
+    background-color: rgb(231, 230, 230);
+    border-radius: 8px;
+    font-family: 'Literata', serif;
+    font-size: 20px;
+}
+
+.container {
+    margin-bottom: 2em;
+}
+
+.position {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+::-webkit-input-placeholder {
+    font-size: 15px;
+}
+
+:-moz-placeholder {
+    font-size: 15px;
+}
+
+::-moz-placeholder {
+    font-size: 15px;
+}
+
+:-ms-input-placeholder {
+    font-size: 15px;
+}
+
+#signinbtn {
+    background-color:rgb(3, 41, 66);
+    border: 0px; 
+    font-size:18px;
+    overflow: hidden;
+}
+
+#alhere {
+
+    font-size: 18px; 
+    font-family: Georgia, Times New Roman, Times, serif;
+    overflow: hidden;
+}
+
+#signupbtn {
+
+    background-color:white; 
+    border: 3px solid rgb(20, 96, 131); 
+    color: rgb(20, 96, 131); 
+    margin-top: 40px; 
+    font-size: 18px; 
+    height: auto;
+    overflow: hidden;
+}
+
+#signuptext {
+
+    font-family: 'Literata', serif;
+    overflow: hidden;
+}

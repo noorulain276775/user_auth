@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+<title>
+  Sign-in form
+</title>
+{% endblock %}
+{% block body %}
+<main>
+  {% include 'messages.html' %}
+  {% block content %}
+  {% endblock %}
+</main>
+<div class="position">
+  <div class="container">
+    <form class="form-style-5" method="post" style="margin-top: 20px">
+      <h1 style="font-family: 'Literata', serif;" class="text-center"><b>Login</b></h1>
+      {% csrf_token %}
+      <table>
+        <div class="form-row login" style="margin-top: 40px">
+          <div class="col-sm-12">
+
+            <label for="{{loginform.phone_tag}}">Phone</label>
+            <input type="text" name="phone" maxlength="12" placeholder="e.g. 923xxxxxxxxx" id="id_phone"
+              pattern="^923[0-9]{9}$" title="Please use the valid format (923xxxxxxxxx)." required>
+
+            <label for="{{loginform.password_tag}}">Password</label>
+            <input type="password" name="password" placeholder="e.g. alpha-numeric combination" maxlength="255"
+              id="id_password" pattern=".{8,}" required>
+
+            <div style="margin-top: 20px;" id="inputsignin">
+              <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit" 
+                style="background-color:white; 
+                border: 3px solid rgb(20, 96, 131); 
+                color: rgb(20, 96, 131); 
+                margin-top: 40px; 
+                font-size: 18px; 
+                height: auto"><b>Login</b>
+              </button>
+            </div>
+            <a href="/phone" class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
+              style="background-color: black; border: 0px; font-size: 18px;" id="forgotpsd">Forgot Password?</a>
+            <hr>
+            <h3 class="text-center" style="font-size: 18px; font-family: Georgia, Times New Roman, Times, serif">Don't
+              have
+              account?</h3>
+            <a href="/" class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
+              style="background-color:rgb(3, 41, 66); border: 0px; font-size:18px">Sign-up</a>
+          </div>
+      </table>
+    </form>
+  </div>
+</div>
+<script src="{% static 'admin/js/user_signin.js' %}"></script>
+{% endblock %}

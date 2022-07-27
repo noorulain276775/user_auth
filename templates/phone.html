@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+<title>
+    Password Reset
+</title>
+{% endblock %}
+
+{% block body %}
+<main>
+    {% include 'messages.html' %}
+    {% block content %}
+    {% endblock %}
+</main>
+  <div class="position">
+    <div class="container">
+      <div class="text-center"></div>
+    <form class= "form-style-5" method="post" style="margin-top: 20px">
+      <h3 style="font-family: 'Literata', serif" class="text-center"><b>Enter your Phone Number</b></h3>
+      <p style="font-family: 'Literata', serif; font-size: 15px" class="text-center">We will send you OTP on your phone number to reset password</p>
+      {% csrf_token %}
+      <table>
+        <div class="row" style="margin-top: 40px">
+            <div class="col-sm-10">
+              <label for="{{reset_form.phone_tag}}">Enter your Phone number</label>
+              <input type="text" name="phone" maxlength="12" placeholder="e.g. 923xxxxxxxxx" id="id_phone"
+                  pattern="^923[0-9]{9}$" title="Please use the valid format (923xxxxxxxxx)."
+                  required>
+            </div>
+          </div>
+          <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit" style="background-color: rgb(3, 41, 66); color: white; margin-top: 20px; font-size: 18px">Send OTP</button>
+    </form>
+    <p style= "font-size: 15px">Remember password? <a href="/login" style="text-decoration:none; margin: top 20px; font-size: 15px">Click </a> to login. </p>
+  </table>
+</div>
+</div>
+<script src="{% static 'admin/js/user_phone.js' %}"></script>
+{% endblock %}
